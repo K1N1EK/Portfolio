@@ -27,7 +27,7 @@
     font-weight: medium;
 }
   .navigation-bar > div.index {
-    grid-area: index
+    grid-area: 
     text-align: center;
   }
   .navigation-bar > div.projects {
@@ -71,12 +71,4 @@ img[src="assets/me.webp"] {
     width: 25%;
     height: auto;
 }
-
-a {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    padding: 2em;
-    margin: -2em;
-  }
 
