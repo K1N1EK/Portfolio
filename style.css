@@ -27,7 +27,7 @@
     font-weight: medium;
 }
   .navigation-bar > div.index {
-    grid-area: homepage;
+    grid-area: index
     text-align: center;
   }
   .navigation-bar > div.projects {
