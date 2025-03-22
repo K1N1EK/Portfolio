@@ -59,7 +59,7 @@
         "index projects contact about";
         grid-template-columns: 1fr 1fr 1fr 1fr; /* Reduce middle space */
         gap: 10px; /* Decrease space between items */
-        font-size: 17px;
+        font-size: 16px;
         margin-top: 10px;
     }
    
