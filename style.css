@@ -1,10 +1,10 @@
-/*navigation bar*/
+/*navigation bar*/ 
 .navigation-bar {
     display: grid;
     grid-template-areas:
     "index empty projects contact about";
     grid-template-columns: 1fr 8fr 1fr 1fr 1fr;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 0px;
     margin-right: 0px;
     gap: 30px;
@@ -13,12 +13,12 @@
 }
 
 .navigation-bar a {
-    text-decoration: none !important; /* Removes underline */
-    color: black; /* Ensures default color */
+    text-decoration: none !important;
+    color: black;
     transition: color 0.3s ease;
 }
 
-  .navigation-bar > div {
+    .navigation-bar > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,9 +27,10 @@
     font-weight: medium;
 }
   .navigation-bar > div.index {
-    grid-area: 
-    text-align: center;
+    grid-area: index;
+    text-align: center; 
   }
+
   .navigation-bar > div.projects {
     grid-area: projects;
     text-align: center;
@@ -44,31 +45,34 @@
     text-align: center;
   }
 
-/* Hover and visited styles */
 .navigation-bar a:hover {
     color: #007bff;
 }
 
-.navigation-bar a:visited {
-    color: black;
+@media (max-width: 768px) {
+    .navigation-bar {
+        grid-template-columns: 1fr 4fr 1fr 1fr 1fr; /* Reduce middle space */
+        gap: 10px; /* Decrease space between items */
+        padding: 5px; /* Reduce padding */
+    }
 }
+
 body{
     font-family: 'Figtree', 'Arial', 'Helvetica', sans-serif;
     background-color: #fefefe;
     color: #000;
 }
 
-h1{
-    color:rgb(255, 58, 41); 
-    font-size: 4em;
-    float:left
-}
 
-img[src="assets/me.webp"] {
-    display: block;
-    margin: 0 auto;
-    border-radius: 50%;
-    width: 25%;
-    height: auto;
+.overlapping-text-and-image-container {
+    position: relative;
+ 
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
 }
-
