@@ -31,6 +31,10 @@
     text-align: center; 
   }
 
+  .navigation-bar > div.empty {
+    grid-area: empty;
+    text-align: center; 
+  }
   .navigation-bar > div.projects {
     grid-area: projects;
     text-align: center;
@@ -50,11 +54,10 @@
 }
 
 @media (max-width: 768px) {
-    .navigation-bar {
+    .navigation-bar, div.about, div.contact, div.index, div.projects  {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Reduce middle space */
         gap: 10px; /* Decrease space between items */
-        font-size: 18px;
-
+        font-size: 30px;
     }
 }
 
