@@ -51,9 +51,10 @@
 
 @media (max-width: 768px) {
     .navigation-bar {
-        grid-template-columns: 1fr 4fr 1fr 1fr 1fr; /* Reduce middle space */
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Reduce middle space */
         gap: 10px; /* Decrease space between items */
-        padding: 5px; /* Reduce padding */
+        font-size: 18px;
+
     }
 }
 
