@@ -1,4 +1,4 @@
-/*navigation bar*/
+/*navigation bar*/ 
 .navigation-bar {
     display: grid;
     grid-template-areas:
@@ -31,6 +31,10 @@
     text-align: center; 
   }
 
+  .navigation-bar > div.empty {
+    grid-area: empty;
+    text-align: center; 
+  }
   .navigation-bar > div.projects {
     grid-area: projects;
     text-align: center;
@@ -49,25 +53,26 @@
     color: #007bff;
 }
 
+@media (max-width: 500px) {
+    .navigation-bar, div.about, div.contact, div.index, div.projects  {
+        grid-template-areas: 
+        "index projects contact about";
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Reduce middle space */
+        gap: 10px; /* Decrease space between items */
+        font-size: 17px;
+        margin-top: 10px;
+    }
+    .about-1 {
+        size-adjust: 375px;
+    }
+}
+
 body{
     font-family: 'Figtree', 'Arial', 'Helvetica', sans-serif;
     background-color: #fefefe;
     color: #000;
 }
-@layer photo {
-    body {
-    img[src="assets/me.webp"] {
-    display: block;
-    margin: 0 auto;
-    border-radius: 0%;
-    width: 25%;
-    height: auto;
-        } 
-    }
-}
 
-@layer text {
-}
 
 .overlapping-text-and-image-container {
     position: relative;
