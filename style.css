@@ -53,11 +53,15 @@
     color: #007bff;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .navigation-bar, div.about, div.contact, div.index, div.projects  {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Reduce middle space */
+        grid-template-areas: 
+        "index projects contact about";
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Reduce middle space */
         gap: 10px; /* Decrease space between items */
-        font-size: 30px;
+        font-size: 17px;
+        margin-top: 10px;
+        
     }
 }
 
