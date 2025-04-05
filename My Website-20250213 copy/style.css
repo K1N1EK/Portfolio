@@ -1,0 +1,414 @@
+
+/*hide scrollbar*/
+::-webkit-scrollbar {
+    display: none;
+}
+/*changes cursor*/
+a {
+    cursor: pointer;
+}
+
+html {
+    scrollbar-width: none;
+}
+
+body {
+    -ms-overflow-style: none;
+}
+
+/*navigation bar*/ 
+.navigation-bar {
+    display: grid;
+    grid-template-areas:
+    "index empty projects contact about";
+    grid-template-columns: 1fr 8fr 1fr 1fr 1fr;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    gap: 30px;
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+}
+.navigation-bar a {
+    text-decoration: none !important;
+    color: black;
+    transition: color 0.3s ease;
+}
+    .navigation-bar > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-family: 'IBM Plex Mono';
+    font-weight: medium;
+}
+  .navigation-bar > div.index {
+    grid-area: index;
+    text-align: center; 
+  }
+  .navigation-bar > div.empty {
+    grid-area: empty;
+    text-align: center; 
+  }
+  .navigation-bar > div.projects {
+    grid-area: projects;
+    text-align: center;
+    
+  }
+  .navigation-bar > div.contact {
+    grid-area: contact;
+    text-align: center;
+  }
+  .navigation-bar > div.about {
+    grid-area: about;
+    text-align: center;
+  }
+.navigation-bar a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 500px) {
+    .navigation-bar, div.about, div.contact, div.index, div.projects  {
+        grid-template-areas: 
+        "index projects contact about";
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* Reduce middle space */
+        gap: 10px; /* Decrease space between items */
+        font-size: 16px;
+        margin-top: 10px;
+    }
+   
+}
+
+
+/*ABOUT*/
+.about-1, .about-2, .about-3 {
+    display: grid;
+    grid-template-areas: 
+    "left1 right1"
+    "left2 right2"
+    "left3 right3";
+    grid-template-columns: 1fr 1fr;
+    margin-left: 180px;
+    margin-right: 180px;
+    column-gap: 100px;
+    row-gap: 10px;
+}
+.about-1{
+margin-top: 60px;
+}
+
+.about-1 > .about-1-left{
+grid-area: left1;
+img {
+    width: 480px;
+    height: 480px;
+    float: left;
+    margin-left: 0px;
+}
+}
+.about-1 > .about-1-right{
+    grid-area: right1;
+    }
+.about-2 > .about-2-left{
+     grid-area: left2;
+     margin-right: 20px;
+
+     }
+.about-2 > .about-2-right{
+    grid-area: right2;
+    margin-right: -90px;
+    margin-left: -20px;
+    img {
+        width: 200px;
+        height: auto;
+        margin-left: -10px;
+        margin-top: -50px;
+        margin-right: 0px;  
+        cursor: pointer;
+    }
+    }
+.about-3 > .about-3-left{
+    grid-area: left3;
+    }
+.about-3 > .about-3-right{
+    grid-area: right3;
+    margin-top: -120px;
+    }
+
+.contact-info{
+    display: grid;
+    grid-template-areas: 
+    "call email dm";
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    margin-left: 180px;
+    margin-right: 180px;
+    gap: 0px;
+    place-items: center;
+    
+}
+.contact-info > .call{
+    grid-area: call;
+    text-align: center;
+    a{
+    text-decoration: none !important;
+    color: black;
+    }
+}
+.contact-info > .email{
+    grid-area: email;
+    text-align: center;
+    a{
+        text-decoration: none !important;
+        color: black;
+        }
+}
+.contact-info > .dm{
+    grid-area: dm;
+    text-align: center;
+    a{
+        text-decoration: none !important;
+        color: black;}
+}
+
+p {
+    font-family: 'IBM Plex sans';
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+}
+
+h1{
+    font-family: 'Rock Salt';
+    font-weight: normal;
+    font-size: 35px;
+}
+
+h2 {
+    font-family: 'Rock Salt';
+    font-weight: normal;
+    font-size: 60px;
+
+   
+}
+
+h3 {
+    font-family: 'IBM Plex Mono';
+    font-weight:normal;
+    font-size: 18px;
+
+    position: relative;
+    top: 55%;
+    left: 100%;
+
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+
+/*Project pages*/
+
+/* Ensure html and body fill the entire screen */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Video container now part of page layout, not absolute */
+.video-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevents overflow of video */
+    position: relative; /* Keeps it in the flow of the page */
+    margin-top: -30px;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure it covers the whole area */
+}
+
+/* Scroll indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 10px;
+    left: 90%;
+    color: rgb(255, 255, 255);
+    font-size: 5rem;
+    animation: bounce 1.5s infinite;
+}
+/* Bouncing effect for scroll indicator */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+.content-section {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+.project-text {
+    display: grid;
+    grid-template-areas: "text-left text-right";
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    place-items: center;
+}
+
+.project-text > .ptext-left{ 
+grid-area: text-left;
+text-align: left;
+float: left;
+margin-top: -20px;
+word-spacing: 10%;
+line-height: 1.6;
+margin-left: 0px;
+
+}
+
+.project-text > .ptext-right{ 
+    grid-area: text-right;
+    text-align: left;
+    margin-top: -20px;
+    a{
+        text-decoration: none !important;
+        font-family: 'IBM Plex sans';
+    font-weight: normal;
+    font-size: 18px;
+        color:#F48182
+    
+    }
+    }
+
+.project-images-center {
+    width: 250%;
+    height: auto;
+    margin-bottom: 20px;
+    img{
+    place-items: center;
+    }
+}
+
+.project-images{
+    display: grid;
+    grid-template-areas: "img-left img-right";
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin-left: 35px;
+}
+
+.project-images> .img-left{
+    grid-area: img-left;
+}
+.project-images> .img-left{
+    grid-area: img-right;
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px 0;
+}
+
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr; /* Three equal columns */
+    gap: 1px;
+}
+
+body {
+    font-family: 'IBM Plex sans';
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin-top: px;
+    padding: 50px;
+    place-items: center;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width Container */
+.container {
+    width: 100vw; /* Full viewport width */
+    max-width: 100%; /* Remove max-width restriction */
+    margin: 0;
+    padding: 30px 5vw; /* Responsive side padding */
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr; /* Adjusted for better balance */
+    width: 100%; /* Ensures it takes the full width */
+    border-top: 1px solid #000;
+}
+
+/* Grid Items */
+.grid-item {
+    padding: 20px;
+    border-bottom: 1px solid #000;
+}
+
+/* First Column (Type of Work) */
+.label {
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Text Styling */
+.title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.year {
+    font-size: 14px;
+    color: #000;
+}
+
+.description {
+    font-size: 14px;
+    color: #000;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr; /* Stack columns for mobile */
+    }
+}
+
+.project-text2{
+    margin-top: -30PX;
+}
